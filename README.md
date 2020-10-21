@@ -1,3 +1,3 @@
 # fundamentals
 
-Content for the Ansible Fundamentals lab, 
+Ansible playbooks and other content for the Ansible Fundamentals lab.

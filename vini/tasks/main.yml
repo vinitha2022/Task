@@ -1,0 +1,5 @@
+---
+# tasks file for vini
+- debug:
+   msg: "hello world,happy new year"
+ 

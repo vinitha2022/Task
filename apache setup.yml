@@ -1,0 +1,18 @@
+---
+- hosts: all
+  name: Install the web server and start it
+  become: true
+  vars:
+    httpd_packages:
+      - httpd
+      - mod_wsgi
+    apache_test_message: This is a test message
+    apache_max_keep_alive_requests: 115
+
+  tasks:
+    - name: Install the apache web server
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ httpd_packages }}"
+      notify: restart apache service

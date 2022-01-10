@@ -1,0 +1,5 @@
+- hosts: all
+  tasks: 
+  - name: ping the server
+    include_role:
+      name: ping_role

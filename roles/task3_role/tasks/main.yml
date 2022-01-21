@@ -1,0 +1,4 @@
+- name: file or directory exist
+  debug:
+    msg: "The file or directory exists"
+  when: file_name.stat.exists

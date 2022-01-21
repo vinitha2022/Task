@@ -1,0 +1,4 @@
+- name: checking if a file exist
+  stat:
+    path: /home/ansible/fundamentals/file.txt
+  register: file_name

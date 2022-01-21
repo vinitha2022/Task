@@ -1,0 +1,18 @@
+    - name: create a get  group
+      group:
+        name: get
+        gid: 1101
+    - name: create  accounts
+      user:
+        name: "{{ item.name }}"
+        uid: "{{ item.uid }}"
+        comment: "{{ item.comment }}"
+        group: get
+        expires: "{{ ansible_date_time.epoch | int + 86400 }}"
+        password: "{{ account_password | password_hash('sha512') }}"
+        update_password: on_create
+      loop:
+        - { name: 'test1', uid: 1104, comment: 'test account 1' }
+        - { name: 'test2', uid: 1105, comment: 'test account 2' }
+        - { name: 'test3', uid: 1106, comment: 'test account 3' }
+
